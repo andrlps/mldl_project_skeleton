@@ -4,7 +4,7 @@ from torchvision import datasets, models, transforms
 
 class dataset():
   @staticmethod
-  def getDataset(bool_train):
+  def getDataset(bt):
     image_transforms = transforms.Compose(
       [
         transforms.Grayscale(num_output_channels=1),
@@ -15,7 +15,7 @@ class dataset():
 
     return datasets.CIFAR10(
       "../data",
-      train=bool_train,
+      train=bt,
       download=True,  
       transform=image_transforms
     )
